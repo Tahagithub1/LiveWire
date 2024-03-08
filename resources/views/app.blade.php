@@ -34,7 +34,7 @@
 
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
   @livewireScripts
-  @livewire('createpoll')
+  @livewire('create-poll')
 </body>
 
 </html>
