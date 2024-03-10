@@ -1,5 +1,5 @@
 <div>
-   <form>
+   <form wire:submit.prevent="createPoll">
     <label> poll title </label>
     <input type="text" wire:model.live="title" />
     this : {{ $title }}
@@ -9,16 +9,17 @@
     @foreach ($options as $index => $option)
     <div class="mb-4">
         <label> option {{ $index + 1 }} </label>
-        <div class="mb-4" >
+        <div class="flex gap-2" >
             <input type="text" wire:model="options.{{ $index }}">
-            <div class="mb-4">
                 <button class="btn" wire:click.prevent="RemoveOption({{ $index }})"  > Remove </button>
-            </div>
             {{-- {{ $index }} - {{ $option }} --}}
         </div>
-
+        @endforeach
+        <div class="mb-4">
+            <button class="btn" type="submit"> create poll </button>
+        </div>
     </div>
-    @endforeach
+
 
    </form>
 </div>
